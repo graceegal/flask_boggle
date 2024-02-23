@@ -28,7 +28,11 @@ class WordList:
         return words
 
     def check_word(self, word):
-        """Is word in word list?"""
+        """Is word in word list?
+
+            >>> TODO: add doctest
+
+        """
 
         return word in self.words
 
