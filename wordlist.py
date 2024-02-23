@@ -30,7 +30,11 @@ class WordList:
     def check_word(self, word):
         """Is word in word list?
 
-            >>> TODO: add doctest
+            >>> wl = WordList("test_dictionary.txt")
+            >>> wl.check_word("CAT")
+            True
+            >>> wl.check_word("SUPERDUPER")
+            False
 
         """
 

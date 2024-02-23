@@ -9,7 +9,6 @@ app.config["SECRET_KEY"] = "this-is-secret"
 # The boggle games created, keyed by game id
 games = {}
 
-
 @app.get("/")
 def homepage():
     """Show board."""
@@ -32,4 +31,5 @@ def new_game():
     game = BoggleGame()
     games[game_id] = game
 
-    return None   # FIXME
+    return jsonify({"gameId": game_id, "board":game.board})
+
