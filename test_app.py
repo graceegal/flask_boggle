@@ -32,15 +32,7 @@ class BoggleAppTestCase(TestCase):
         """Test starting a new game."""
 
         with app.test_client() as client:
-            resp = client.post('/api/new-game',
-                data = {'gameId':"1234",
-                        'board':[['O', 'E', 'R', 'A', 'B'],
-                                 ['T', 'U', 'E', 'R', 'C'],
-                                 ['L', 'L', 'F', 'S', 'S'],
-                                 ['N', 'H', 'L', 'F', 'B'],
-                                 ['K', 'H', 'G', 'R', 'E']]})
-
-            #html = resp.get_data(as_text=True)
+            resp = client.post('/api/new-game')
             json_resp = resp.get_json()
 
             self.assertIsInstance(json_resp["gameId"], str)
